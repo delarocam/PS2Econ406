@@ -37,3 +37,31 @@ def compute_demand(sales: float, initprice: float, newprice: float,
 
 
 # d.) combining elasticity and Demand into main function using input function
+
+def main():
+    choice = input("Would you like to Calculate Elasticity or Demand?")
+    if choice == "Elasticity":
+        oldprice = float(input("Old price?"))
+        newprice = float(input("New price?"))
+        oldquant = float(input("Old quantity?"))
+        newquant = float(input("New quantity?"))
+        elasticity = compute_elasticity(oldprice, newprice, oldquant, newquant)
+        classification = check_elasticity(elasticity)
+        output = print("e: " + str(elasticity) + "category: " +
+                       str(classification))
+    elif choice == "Demand":
+        sales = float(input("Sales?"))
+        initprice = float(input("Initial price?"))
+        newelasticity = float(input("Elasticity?"))
+        newrange = list(input("Additional price points?(input list)"))
+        demand_dict = {initprice: sales}
+        for i in newrange:
+            demand_dict[float(i)] = compute_demand(sales, initprice,
+                                                   newelasticity, float(i))
+        output = demand_dict
+    else:
+        output = "not valid input"
+    return output
+
+
+main()
