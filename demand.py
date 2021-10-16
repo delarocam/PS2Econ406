@@ -17,12 +17,12 @@ def compute_elasticity(price1: float, price2: float, quantity1: float,
 # b.) elasticity classifier function
 
 
-def check_elasticity(e: float) -> str:
+def check_elasticity(elasticity: float) -> str:
     """this funciton classifies elasticites as either elastic
     inelastic or unit elastic"""
-    if e > 1:
+    if elasticity > 1:
         category = "elastic"
-    elif e == 1:
+    elif elasticity == 1:
         category = "unit elastic"
     else:
         category = "inelastic"
@@ -36,9 +36,9 @@ def check_elasticity(e: float) -> str:
 
 
 def compute_demand(sales: float, initprice: float, newprice: float,
-                   e: float) -> float:
+                   elasticity: float) -> float:
     """this function computes new quantity demanded"""
-    newdemand = sales * (initprice / newprice) ** e
+    newdemand = sales * (initprice / newprice) ** elasticity
     return newdemand
 
 # test, uncomment to run function
@@ -64,13 +64,12 @@ def main():
         initprice = float(input("Initial price?"))
         newelasticity = float(input("Elasticity?"))
         newrange = input("Additional price points?" +
-                         "(input list of numbers seperated by a space)")
+                         "(input list of numbers seperated by a white space" +
+                         "between each one)")
         newrange = newrange.split()
         print(newrange)
         demand_dict = {initprice: sales}
         for i in newrange:
-            """This forloop iterates each element of a price list
-            and computes quanity demanded in a dictionary for each"""
             i = float(i)
             demand_dict[i] = compute_demand(sales, initprice,
                                             i, newelasticity)
