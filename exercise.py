@@ -45,12 +45,12 @@ def factorial(n_arg: int) -> int:
         factor = i * factor
     return print(factor)
 
-# test
+# test: uncomment to run
 
 
-factorial(10)
-factorial(9)
-factorial(5)
+# factorial(10)
+# factorial(9)
+# factorial(5)
 
 
 word_list = ["sklearn", "AI", "data analysis", "Caffe", "AI", "sklearn", "AI",
@@ -73,7 +73,7 @@ def compute_frequency(words: str) -> dict:
         dictionary[i] = tally
     return print(dictionary)
 
-# test
+# test: uncomment to run
 
 
-compute_frequency(word_list)
+# compute_frequency(word_list)
