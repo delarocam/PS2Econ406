@@ -67,8 +67,8 @@ def main():
         initprice = float(input("Initial price?"))
         newelasticity = float(input("Elasticity?"))
         newrange = input("Additional price points?" +
-                         "(input list of numbers seperated by a white space" +
-                         "between each one)")
+                         "(input list of numbers separated by a white space" +
+                         " between each one)")
         newrange = newrange.split()
         demand_dict = {initprice: sales}
         for i in newrange:
