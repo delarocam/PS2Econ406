@@ -28,7 +28,8 @@ def prisoners_dilemma() -> int:
         print("A:-3, B:-3")
     else:
         print("invalid input")
-    return print(" rounds played: " + str(rounds))
+    print("Rounds:" + str(rounds))
+    return rounds
 
 # test: uncomment to run
 
@@ -43,7 +44,8 @@ def factorial(n_arg: int) -> int:
     factor = 1
     for i in range(1, n_arg + 1):
         factor = i * factor
-    return print(factor)
+    print(factor)
+    return factor
 
 # test: uncomment to run
 
@@ -71,7 +73,8 @@ def compute_frequency(words: str) -> dict:
             else:
                 tally = tally + 0
         dictionary[i] = tally
-    return print(dictionary)
+    print(dictionary)    
+    return dictionary
 
 # test: uncomment to run
 

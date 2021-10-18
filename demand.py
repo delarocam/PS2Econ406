@@ -9,6 +9,7 @@ def compute_elasticity(price1: float, price2: float, quantity1: float,
                        quantity2: float) -> float:
     """this function computes the elasticity given price and quantities"""
     elasticity = math.log(quantity1 / quantity2) / math.log(price1 / price2)
+    print(elasticity)
     return elasticity
 
 # test, uncomment to run function
@@ -26,6 +27,7 @@ def check_elasticity(elasticity: float) -> str:
         category = "unit elastic"
     else:
         category = "inelastic"
+    print(category)    
     return category
 
 # test, uncomment to run function
@@ -39,6 +41,7 @@ def compute_demand(sales: float, initprice: float, newprice: float,
                    elasticity: float) -> float:
     """this function computes new quantity demanded"""
     newdemand = sales * (initprice / newprice) ** elasticity
+    print(newdemand)
     return newdemand
 
 # test, uncomment to run function
@@ -67,7 +70,6 @@ def main():
                          "(input list of numbers seperated by a white space" +
                          "between each one)")
         newrange = newrange.split()
-        print(newrange)
         demand_dict = {initprice: sales}
         for i in newrange:
             i = float(i)
@@ -76,8 +78,9 @@ def main():
         output = demand_dict
     else:
         output = "not valid input"
-    return print(output)
+        print(output)
+    return output
 
 
 # test, uncomment to run function
-# main()
+main()
