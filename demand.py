@@ -27,7 +27,7 @@ def check_elasticity(elasticity: float) -> str:
         category = "unit elastic"
     else:
         category = "inelastic"
-    print(category)    
+    print(category)
     return category
 
 # test, uncomment to run function
@@ -80,7 +80,6 @@ def main():
         output = "not valid input"
         print(output)
     return output
-
 
 # test, uncomment to run function
 # main()

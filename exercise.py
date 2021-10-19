@@ -73,7 +73,7 @@ def compute_frequency(words: str) -> dict:
             else:
                 tally = tally + 0
         dictionary[i] = tally
-    print(dictionary)    
+    print(dictionary)
     return dictionary
 
 # test: uncomment to run
